@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <set>
+#include <cctype>
+#include <cstring>
+#include <list>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	string input;
+	cin >> input;
+	vector <string> vec (26);
+	int n = input.length();
+	for (int i = 0; i < n; i ++)
+	{
+		int j;
+		if (isupper(input[i]))
+		{
+			j = input[i] - 'A';
+
+		}
+		else
+		{
+			j = input[i] - 'a';
+		}
+		string ele;
+		ele += input[i];
+		vec.at(j) += ele;
+	}
+	int i = vec.size();
+	vector <string> vec1;
+	for (int j = 0; j < i; j++)
+	{
+		string ele;
+		ele += vec.at(j);
+		char ch = ele[0];
+		if (isalpha(ch))
+		{
+			vec1.push_back(ele);
+		}
+	}
+
+	int k = vec1.size();
+	for(int j = 0; j < k / 2; j ++)
+	{
+		cout << vec1.at(j);
+		cout << vec1.at(k - j - 1);
+	}
+
+	if (k % 2 == 1)
+	{
+		cout << vec1.at((k / 2));
+	}
+
+}
