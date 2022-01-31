@@ -1,0 +1,45 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+class employee
+{
+int emp_number;
+char emp_name[20];
+float emp_basic;
+float sal;
+float emp_da;
+float emp_net_sal;
+float emp_it;
+public:
+void get_details(int i);
+void find_net_sal();
+void show_emp_details();
+};
+void employee :: get_details(int i) {
+cout<<"\nEnter employee " << i+1 << " number: ";
+cin>>emp_number;
+cout<<"\nEnter employee " << i+1 << " name: ";
+cin>>emp_name;
+cout<<"\nEnter employee " << i+1 << " basic: ";
+cin>>emp_basic;
+}
+void employee :: show_emp_details() {
+cout<<"\n\n\nDetails of : "<<emp_name;
+cout<<"\n\nEmployee number: "<<emp_number;
+cout<<"\nBasic salary : "<<emp_basic;
+cout<<"\nEmployee DA : "<<emp_da;
+cout<<"\nIncome Tax : "<<emp_it;
+cout<<"\nNet Salary : "<<emp_net_sal;
+}
+int main() {
+employee emp[10];
+int i,num;
+cout<<"\nEnter number of employee details: ";
+cin>>num;
+for(i=0;i<num;i++)
+emp[i].get_details(i);
+for(i=0;i<num;i++)
+emp[i].show_emp_details();
+getch();
+ return 0;
+}
