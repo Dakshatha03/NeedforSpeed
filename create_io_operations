@@ -1,0 +1,11 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+int main() {
+ char c;
+ cout<<"\nEnter any character value: ";
+ c=cin.get();
+ cout.put(c); 
+ cout.put('c'); 
+return 0;
+}
