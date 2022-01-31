@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+	string series;
+	cin >> series;
+	set < char > numSet;
+
+	for(char ele : series)
+	{
+		if (isdigit(ele))
+		{
+			numSet.insert(ele);
+		}
+	}
+	string ans = "";
+	int flag;
+	for(char ele : numSet)
+	{
+		if (stoi(&ele) % 2 == 0)
+		{
+			flag = 1;
+			ans = ele + ans;
+			numSet.erase(ele);
+			break;
+		}
+	}
+	if (flag == 0)
+	{
+		cout << "-1";
+	}
+	else
+	{
+		for(char ele : numSet)
+		{
+			ans = ele + ans;
+		}
+		cout << ans;
+	}
+}
