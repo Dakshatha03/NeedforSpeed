@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string s, element;
+    int i, square_num;
+    cout<<"Enter the number\n";
+    cin >> s;
+    for (i = 1; i < int(s.length()); i += 2)
+    {
+        element = s[i];
+        square_num = stoi(element) * stoi(element);
+        cout << square_num;
+    }
+    return 0;
+}
