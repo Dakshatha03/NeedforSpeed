@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class a1
+{
+public:
+    int x;
+    virtual void display()
+    {
+        x = 10;
+        cout << "value of x is: " << x << endl;
+    }
+};
+
+class a2 : public a1
+{
+public:
+    int x;
+    void display()
+    {
+        x = 20;
+        cout << "value of x is: " << x << endl;
+    }
+};
+
+class a3 : public a2
+{
+public:
+    void display()
+    {
+        cout << "a3::fun is called" << endl;
+    }
+};
+
+int main()
+{
+    a3 obj3;
+    a2 *obj2 = &obj3;
+    obj2->display();
+    return 0;
+}
